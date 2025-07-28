@@ -42,3 +42,7 @@ npm run build
 # 部署到 GitHub Pages
 npm run deploy
 ```
+
+## 資料來源
+[AI salaries revealed: How much top startups like OpenAI, Anthropic, and Cohere are paying employees](https://www.businessinsider.com/top-ai-startup-companies-salaries-pay-data-openai-anthropic-perplexity-2025-7)
+
