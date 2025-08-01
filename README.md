@@ -39,7 +39,7 @@ npm run build
 npm run deploy
 ```
 
-## 線上預覽
+## Demo
 https://estellacoding.github.io/openai-anthropic-salaries-data/
 
 ## 資料來源
