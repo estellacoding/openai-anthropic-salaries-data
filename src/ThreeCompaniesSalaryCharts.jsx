@@ -127,24 +127,33 @@ const ThreeCompaniesSalaryCharts = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 p-6 rounded-lg">
-        <ResponsiveContainer width="100%" height={500}>
+      <div className="bg-gray-50 p-3 md:p-6 rounded-lg">
+        <ResponsiveContainer width="100%" height={400} minHeight={300}>
           <BarChart
             data={data.sort((a, b) => a.avgSalary - b.avgSalary)}
-            margin={{ top: 20, right: 30, left: 40, bottom: 100 }}
+            margin={{ 
+              top: 20, 
+              right: 10, 
+              left: 20, 
+              bottom: window.innerWidth < 768 ? 120 : 100 
+            }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
             <XAxis 
               dataKey="position" 
               angle={-45}
               textAnchor="end"
-              height={100}
+              height={window.innerWidth < 768 ? 120 : 100}
               interval={0}
-              tick={{ fontSize: 10 }}
+              tick={{ 
+                fontSize: window.innerWidth < 768 ? 8 : 10,
+                width: window.innerWidth < 768 ? 80 : 120
+              }}
             />
             <YAxis 
               tickFormatter={formatSalary}
-              tick={{ fontSize: 12 }}
+              tick={{ fontSize: window.innerWidth < 768 ? 10 : 12 }}
+              width={window.innerWidth < 768 ? 50 : 60}
             />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="avgSalary" radius={[4, 4, 0, 0]}>
