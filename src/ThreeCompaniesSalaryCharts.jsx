@@ -105,7 +105,7 @@ const ThreeCompaniesSalaryCharts = () => {
   };
 
   const CompanyChart = ({ data, companyName, companyColor, description }) => (
-    <div className="mb-12">
+    <div className="mb-8">
       <div className="mb-6">
         <h2 className="text-2xl font-bold mb-2" style={{ color: companyColor }}>
           {companyName} 薪資結構分析
@@ -147,7 +147,7 @@ const ThreeCompaniesSalaryCharts = () => {
               top: 20, 
               right: isMobile ? 5 : 30, 
               left: isMobile ? 15 : 40, 
-              bottom: isMobile ? 140 : 100 
+              bottom: isMobile ? 120 : 80 
             }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -155,7 +155,7 @@ const ThreeCompaniesSalaryCharts = () => {
               dataKey="position" 
               angle={isMobile ? -60 : -45}
               textAnchor="end"
-              height={isMobile ? 140 : 100}
+              height={isMobile ? 120 : 80}
               interval={0}
               tick={{ 
                 fontSize: isMobile ? 7 : 10,
