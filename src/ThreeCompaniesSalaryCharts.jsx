@@ -140,14 +140,14 @@ const ThreeCompaniesSalaryCharts = () => {
       </div>
 
       <div className="bg-gray-50 p-2 md:p-6 rounded-lg overflow-hidden">
-        <ResponsiveContainer width="100%" height={isMobile ? 300 : 500} minHeight={280}>
+        <ResponsiveContainer width="100%" height={isMobile ? 280 : 500} minHeight={260}>
           <BarChart
             data={data.sort((a, b) => a.avgSalary - b.avgSalary)}
             margin={{ 
               top: 20, 
               right: isMobile ? 5 : 30, 
               left: isMobile ? 15 : 40, 
-              bottom: isMobile ? 80 : 80 
+              bottom: isMobile ? 60 : 80 
             }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
@@ -155,7 +155,7 @@ const ThreeCompaniesSalaryCharts = () => {
               dataKey="position" 
               angle={isMobile ? -60 : -45}
               textAnchor="end"
-              height={isMobile ? 80 : 80}
+              height={isMobile ? 60 : 80}
               interval={0}
               tick={{ 
                 fontSize: isMobile ? 7 : 10,
