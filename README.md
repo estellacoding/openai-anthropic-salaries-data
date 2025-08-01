@@ -19,10 +19,6 @@
 - Recharts
 - GitHub Pages
 
-## 線上預覽
-
-https://estellacoding.github.io/openai-anthropic-salaries-data/
-
 ## 本地開發
 
 ```bash
@@ -42,6 +38,9 @@ npm run build
 # 部署到 GitHub Pages
 npm run deploy
 ```
+
+## 線上預覽
+https://estellacoding.github.io/openai-anthropic-salaries-data/
 
 ## 資料來源
 [AI salaries revealed: How much top startups like OpenAI, Anthropic, and Cohere are paying employees](https://www.businessinsider.com/top-ai-startup-companies-salaries-pay-data-openai-anthropic-perplexity-2025-7)
