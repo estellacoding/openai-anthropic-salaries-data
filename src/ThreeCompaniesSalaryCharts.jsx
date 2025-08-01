@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 const ThreeCompaniesSalaryCharts = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   // Anthropic salary data
   const anthropicData = [
     { position: 'Startup Account Executive', minSalary: 126000, maxSalary: 126000, avgSalary: 126000, category: 'Sales' },
@@ -127,33 +139,33 @@ const ThreeCompaniesSalaryCharts = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50 p-3 md:p-6 rounded-lg">
-        <ResponsiveContainer width="100%" height={400} minHeight={300}>
+      <div className="bg-gray-50 p-2 md:p-6 rounded-lg overflow-hidden">
+        <ResponsiveContainer width="100%" height={isMobile ? 350 : 500} minHeight={300}>
           <BarChart
             data={data.sort((a, b) => a.avgSalary - b.avgSalary)}
             margin={{ 
               top: 20, 
-              right: 10, 
-              left: 20, 
-              bottom: window.innerWidth < 768 ? 120 : 100 
+              right: isMobile ? 5 : 30, 
+              left: isMobile ? 15 : 40, 
+              bottom: isMobile ? 140 : 100 
             }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
             <XAxis 
               dataKey="position" 
-              angle={-45}
+              angle={isMobile ? -60 : -45}
               textAnchor="end"
-              height={window.innerWidth < 768 ? 120 : 100}
+              height={isMobile ? 140 : 100}
               interval={0}
               tick={{ 
-                fontSize: window.innerWidth < 768 ? 8 : 10,
-                width: window.innerWidth < 768 ? 80 : 120
+                fontSize: isMobile ? 7 : 10,
+                width: isMobile ? 60 : 120
               }}
             />
             <YAxis 
               tickFormatter={formatSalary}
-              tick={{ fontSize: window.innerWidth < 768 ? 10 : 12 }}
-              width={window.innerWidth < 768 ? 50 : 60}
+              tick={{ fontSize: isMobile ? 9 : 12 }}
+              width={isMobile ? 45 : 60}
             />
             <Tooltip content={<CustomTooltip />} />
             <Bar dataKey="avgSalary" radius={[4, 4, 0, 0]}>
@@ -233,6 +245,20 @@ const ThreeCompaniesSalaryCharts = () => {
         companyColor="#8B5CF6"
         description=""
       />
+
+      {/* Footer */}
+      <div className="mt-12 text-center border-t pt-6">
+        <p className="text-gray-600 text-sm">
+          by <a 
+            href="https://stellacoding.substack.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 underline"
+          >
+            史戴拉寫扣週報
+          </a>
+        </p>
+      </div>
 
       </div>
   );
