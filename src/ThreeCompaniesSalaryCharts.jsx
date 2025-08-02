@@ -24,7 +24,7 @@ const ThreeCompaniesSalaryCharts = () => {
     { position: 'People Partner', minSalary: 285000, maxSalary: 285000, avgSalary: 285000, category: 'HR' },
     { position: 'Member of Technical Staff', minSalary: 300000, maxSalary: 405000, avgSalary: 352500, category: 'Technical' },
     { position: 'Research Engineer', minSalary: 340000, maxSalary: 690000, avgSalary: 515000, category: 'Technical' },
-    { position: 'MTS Manager', minSalary: 690000, maxSalary: 690000, avgSalary: 690000, category: 'Management' }
+    { position: 'Technical Staff Manager', minSalary: 690000, maxSalary: 690000, avgSalary: 690000, category: 'Management' }
   ];
 
   // OpenAI salary data
