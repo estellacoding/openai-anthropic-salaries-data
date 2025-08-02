@@ -159,10 +159,9 @@ const ThreeCompaniesSalaryCharts = () => {
               interval={0}
               tick={{ 
                 fontSize: isMobile ? 7 : 10,
-                width: isMobile ? 60 : 120,
-                textOverflow: 'clip',
-                whiteSpace: 'nowrap'
+                textOverflow: 'clip'
               }}
+              style={{ whiteSpace: 'nowrap' }}
             />
             <YAxis 
               tickFormatter={formatSalary}
